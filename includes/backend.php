@@ -18,9 +18,7 @@ class TPgMapModule extends FLBuilderModule {
 		));
 
 		$this->add_js( 'google-maps',       '//maps.google.com/maps/api/js?sensor=false&#038;language=fr', array('jquery'), null );
-		$this->add_js( 'markerclusterer',   $this->url .'assets/js/markerclusterer.min.js', array('jquery'), null, null );
 		$this->add_js( 'jquery-ui-map',     $this->url .'assets/js/jquery.ui.map.min.js', array('jquery'), null, null );
-
 	}
 }
 

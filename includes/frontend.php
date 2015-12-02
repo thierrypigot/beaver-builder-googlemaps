@@ -1,5 +1,5 @@
 <?php
-$mapsID = 'maps-'. md5( time() );
+$mapsID = 'maps-'. uniqid();
 
 $atts = array(
 	'lat'                       => $settings->lat,
@@ -18,7 +18,7 @@ $atts = array(
 if( !$atts['lat'] || !$atts['lng'] )
 return;
 ?>
-<style>#<?php echo $mapsID; ?> img {max-width: initial;}</style>
+<style>#<?php echo esc_html( $mapsID ); ?> img {max-width: initial;}</style>
 <script>
 	var $j = jQuery.noConflict();
 
@@ -73,7 +73,7 @@ return;
 	];
 
 	var styledMap = new google.maps.StyledMapType( styles, {name: "Routier"} );
-	var latlng = new google.maps.LatLng( <?php echo $atts['lat']; ?>, <?php echo $atts['lng']; ?> ); // Paris
+	var latlng = new google.maps.LatLng( <?php echo esc_js( $atts['lat'] ); ?>, <?php echo esc_js( $atts['lng'] ); ?> ); // Paris
 
 	// This function picks up the click and opens the corresponding info window
 	function myClick(i)
@@ -113,14 +113,14 @@ return;
 
 
 		// We need to bind the map with the "init" event otherwise bounds will be null
-		$('#<?php echo $mapsID; ?>')
+		$('#<?php echo esc_html( $mapsID ); ?>')
 			.gmap({
-				zoom:					<?php echo $atts['zoom']; ?>,
+				zoom:					<?php echo esc_js( $atts['zoom'] ); ?>,
 				center:					latlng,
-				overviewMapControl:		<?php echo $atts['overviewMapControl']; ?>,
-				rotateControl:			<?php echo $atts['rotateControl']; ?>,
-				scaleControl:			<?php echo $atts['scaleControl']; ?>,
-				scrollwheel:			<?php echo $atts['scrollwheel']; ?>,
+				overviewMapControl:		<?php echo esc_js( $atts['overviewMapControl'] ); ?>,
+				rotateControl:			<?php echo esc_js( $atts['rotateControl'] ); ?>,
+				scaleControl:			<?php echo esc_js( $atts['scaleControl'] ); ?>,
+				scrollwheel:			<?php echo esc_js( $atts['scrollwheel'] ); ?>,
 				streetViewControl:		false,
 				mapTypeControlOptions:	{
 					mapTypeIds: [google.maps.MapTypeId.SATELLITE, 'map_style']
@@ -134,21 +134,18 @@ return;
 
 				$.each( data.markers, function(i, marker)
 				{
-					var m = $('#<?php echo $mapsID; ?>').gmap('addMarker', {
+					var m = $('#<?php echo esc_js( $mapsID ); ?>').gmap('addMarker', {
 						'position': new google.maps.LatLng( marker.lat, marker.lng ),
 						'icon': icon,
 						'bounds': false
 					}).click(function() {
 						if(marker.content)
 						{
-							$('#<?php echo $mapsID; ?>').gmap('openInfoWindow', { content : the_content( marker ) }, this);
+							$('#<?php echo esc_js( $mapsID ); ?>').gmap('openInfoWindow', { content : the_content( marker ) }, this);
 						}
 					})[0];
 				});
-
-				$('#<?php echo $mapsID; ?>').gmap('set', 'MarkerClusterer', new MarkerClusterer(map, $(this).gmap('get', 'markers')));
-
 			});
 	});
 </script>
-<div class="gmap" id="<?php echo $mapsID; ?>" style="width: <?php echo $atts['width']; ?>; height: <?php echo $atts['height']; ?>;"></div>
+<div class="gmap" id="<?php echo esc_html( $mapsID ); ?>" style="width: <?php echo $atts['width']; ?>; height: <?php echo $atts['height']; ?>;"></div>
