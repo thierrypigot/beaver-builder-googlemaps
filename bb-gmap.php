@@ -7,6 +7,18 @@
  * Author: Thierry Pigot
  * Author URI: http://www.thierry-pigot.fr
  */
+ 
+ /*
+ * todo[
+ * Vérifier l'exécution des shortcodes dans le contenu
+ * Ajouter un éditeur Wysiwyg pour générer les coordonnées, avec récupération par l'adresse ou le positionnement physique sur la carte
+ * Faire les traductions (PoMo)
+ * Ajouter des hooks :
+ * - modifier le wrapper html de la popup du marqueur
+ * - changer l'image du pins de base
+ * ]
+*/
+
 define('TP_BB_GMAP_DIR', plugin_dir_path(__FILE__));
 define('TP_BB_GMAP_URL', plugins_url('/', __FILE__));
 
