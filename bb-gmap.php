@@ -25,7 +25,18 @@ define('TP_BB_GMAP_URL', plugins_url('/', __FILE__));
 // Custom modules
 function tp_bb_load_module_gmap() {
 	if( class_exists('FLBuilder') ) {
-		require_once 'includes/backend.php';
+		require_once 'includes/tp_bb_gmap_backend.php';
 	}
 }
 add_action('init', 'tp_bb_load_module_gmap');
+
+/**
+ * Load plugin textdomain.
+ *
+ * @since 1.0.0
+ */
+add_action( 'plugins_loaded', 'tp_bb_load_textdomain_gmap' );
+function tp_bb_load_textdomain_gmap()
+{
+	load_plugin_textdomain( 'bbgmap', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
