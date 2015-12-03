@@ -3,7 +3,7 @@
  * Plugin Name: Beaver Builder - Google Maps
  * Plugin URI: http://www.thierry-pigot.fr
  * Description: Google Maps module for Beaver Builder.
- * Version: 1.1
+ * Version: 1.2
  * Author: Thierry Pigot
  * Author URI: http://www.thierry-pigot.fr
  */
@@ -12,7 +12,6 @@
  * todo[
  * Vérifier l'exécution des shortcodes dans le contenu
  * Ajouter un éditeur Wysiwyg pour générer les coordonnées, avec récupération par l'adresse ou le positionnement physique sur la carte
- * Faire les traductions (PoMo)
  * Ajouter des hooks :
  * - modifier le wrapper html de la popup du marqueur
  * - changer l'image du pins de base
