@@ -16,8 +16,9 @@ Add a new module to create a Google Maps in Beaver Builder.
 Map options
 1. Locate marker by Lattitude and Longitude
 2. Zoom level
-3. Custom marker
-4. Custom text (wysiwyg) inside marker popup
+3. Map height
+4. Custom marker
+5. Custom text (wysiwyg) inside marker popup
 
 
 == Installation ==
@@ -28,8 +29,9 @@ Map options
 
 == Screenshots ==
 
-1. Screenshot of settings module.
-2. Result on front page
+1. Screenshot of settings module 1/2
+2. Screenshot of settings module 2/2
+3. Result on front page
 
 == Changelog ==
 
