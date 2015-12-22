@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Beaver Builde Google Maps Module\n"
-"POT-Creation-Date: 2015-12-03 23:59+0100\n"
-"PO-Revision-Date: 2015-12-04 00:00+0100\n"
+"POT-Creation-Date: 2015-12-22 23:42+0100\n"
+"PO-Revision-Date: 2015-12-22 23:44+0100\n"
 "Last-Translator: Thierry Pigot <contact@thierry-pigot.fr>\n"
 "Language-Team: Thierry Pigot <contact@thierry-pigot.fr>\n"
 "Language: fr_FR\n"
@@ -16,54 +16,82 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: includes/tp_bb_gmap_backend.php:13
+#: bb-gmap.php:47
+msgid "55 Rue du Faubourg Saint-Honoré, 75008 Paris, France"
+msgstr "55 Rue du Faubourg Saint-Honoré, 75008 Paris, France"
+
+#: bb-gmap.php:48
+msgid "Get coordinates"
+msgstr "Obtenir les coordonnées"
+
+#: bb-gmap.php:52
+msgid "Move the marker to reposition"
+msgstr "Déplacer le curseur pour repositionner"
+
+#: tpbbgmap/tpbbgmap.php:13
 msgid "Google Map"
 msgstr "Carte Google"
 
-#: includes/tp_bb_gmap_backend.php:14
+#: tpbbgmap/tpbbgmap.php:14
 msgid "Display a Google map."
 msgstr "Afficher la carte Google."
 
-#: includes/tp_bb_gmap_backend.php:15
+#: tpbbgmap/tpbbgmap.php:15
 msgid "Advanced Modules"
 msgstr "Extensions avancées"
 
-#: includes/tp_bb_gmap_backend.php:31
+#: tpbbgmap/tpbbgmap.php:33 tpbbgmap/tpbbgmap.php:128
 msgid "General"
 msgstr "Général"
 
-#: includes/tp_bb_gmap_backend.php:38
-msgid "Latitude"
-msgstr "Latitude"
-
-#: includes/tp_bb_gmap_backend.php:39
-msgid "48.8582807"
-msgstr "48.8582807"
-
-#: includes/tp_bb_gmap_backend.php:46
-msgid "Longitude"
-msgstr "Longitude"
-
-#: includes/tp_bb_gmap_backend.php:47
-msgid "2.386331"
-msgstr "2.386331"
-
-#: includes/tp_bb_gmap_backend.php:54
+#: tpbbgmap/tpbbgmap.php:40
 msgid "Zoom"
 msgstr "Zoom"
 
-#: includes/tp_bb_gmap_backend.php:57
+#: tpbbgmap/tpbbgmap.php:43
 msgid "1 (space)"
 msgstr "1 (espace)"
 
-#: includes/tp_bb_gmap_backend.php:78
+#: tpbbgmap/tpbbgmap.php:64
 msgid "21 (street)"
 msgstr "21 (rue)"
 
-#: includes/tp_bb_gmap_backend.php:86
+#: tpbbgmap/tpbbgmap.php:72
 msgid "Height"
 msgstr "Hauteur"
 
-#: includes/tp_bb_gmap_backend.php:101
+#: tpbbgmap/tpbbgmap.php:85
+msgid "Markers"
+msgstr "Marqueurs"
+
+#: tpbbgmap/tpbbgmap.php:92 tpbbgmap/tpbbgmap.php:158
 msgid "Marker"
 msgstr "Marqueur"
+
+#: tpbbgmap/tpbbgmap.php:125
+msgid "Add Marker"
+msgstr "Ajouter un marqueur"
+
+#: tpbbgmap/tpbbgmap.php:135
+msgid "Title"
+msgstr "Titre"
+
+#: tpbbgmap/tpbbgmap.php:136
+msgid "Used to identify the markers in list"
+msgstr "Utilisé pour identifier les marqueurs dans la liste"
+
+#: tpbbgmap/tpbbgmap.php:140
+msgid "Latitude"
+msgstr "Latitude"
+
+#: tpbbgmap/tpbbgmap.php:141
+msgid "48.8582807"
+msgstr "48.8582807"
+
+#: tpbbgmap/tpbbgmap.php:149
+msgid "Longitude"
+msgstr "Longitude"
+
+#: tpbbgmap/tpbbgmap.php:150
+msgid "2.386331"
+msgstr "2.386331"

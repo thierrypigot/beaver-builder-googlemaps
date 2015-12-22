@@ -35,5 +35,9 @@ Map options
 
 == Changelog ==
 
+= 1.2 =
+* Add multi markers
+* Add some filters
+
 = 1.1 =
 * First stable version
