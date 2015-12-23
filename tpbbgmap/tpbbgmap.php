@@ -23,6 +23,14 @@ class TPgMapModule extends FLBuilderModule {
 		$this->add_js( 'bb-gmaps-script',     	$this->url .'assets/js/script.js', array('markerclusterer'), null, null );
 	}
 
+
+	public function update( $settings ) {
+
+		if( !empty( $settings->content ) )
+			$settings->content = do_shortcode( $settings->content );
+
+		return $settings;
+	}
 }
 
 /**
@@ -133,7 +141,10 @@ FLBuilder::register_settings_form('marker_group_form', array(
 						'title'       => array(
 							'type'          => 'text',
 							'label'         => __('Title', 'bbgmap'),
-							'description'   => __('Used to identify the markers in list', 'bbgmap'),
+							'help'			=> __('Used to identify the markers in list', 'bbgmap'),
+						),
+						'map'		=> array(
+							'type'	=> 'gmap',
 						),
 						'lat'       => array(
 							'type'          => 'text',

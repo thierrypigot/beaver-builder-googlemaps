@@ -15,17 +15,27 @@ $controls = array(
 	'width'                     => '100%',
 );
 
+// Filter to change Google maps controls
 if( has_filter('bbgmap_map_controls') ) {
 	$controls = apply_filters( 'bbgmap_map_controls', $controls );
 }
 
-
 $atts = array_merge( $data, $controls );
 
-if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(  $atts['markers'][0]->lng ) ) )
-	return;
+// do_shortcode on all content field
+foreach ( $atts['markers'] as $id => $marker) {
+	$atts['markers'][$id]->content = do_shortcode( $atts['markers'][0]->content );
+}
 
+
+if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(  $atts['markers'][0]->lng ) ) ) {
+	?>
+	<div class="alert alert-danger" role="alert"><?php _e('Add a marker to see the map', 'bbgmap'); ?></div>
+	<?php
+	return;
+}
 ?>
+
 <style>#<?php echo esc_html( $mapsID ); ?> img {max-width: initial;}</style>
 <script>
 	var $j = jQuery.noConflict();
@@ -34,58 +44,9 @@ if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(
 	$j( document ).ready(function($) {
 
 		<?php
-		$map_style = '
-			[
-				{
-					stylers: [
-						{hue: ""},
-						{saturation: "-50"},
-						{lightness: "-3"},
-					]
-				},
-				{
-					featureType: "landscape", stylers: [
-					{visibility: "on"},
-					{hue: ""},
-					{saturation: ""},
-					{lightness: ""},
-				]
-				},
-				{
-					featureType: "administrative", stylers: [
-					{visibility: "on"},
-					{hue: ""},
-					{saturation: ""},
-					{lightness: ""},
-				]
-				},
-				{
-					featureType: "road", stylers: [
-					{visibility: "on"},
-					{hue: ""},
-					{saturation: ""},
-					{lightness: ""},
-				]
-				},
-				{
-					featureType: "water", stylers: [
-					{visibility: "on"},
-					{hue: ""},
-					{saturation: ""},
-					{lightness: ""},
-				]
-				},
-				{
-					featureType: "poi", stylers: [
-					{visibility: "on"},
-					{hue: ""},
-					{saturation: ""},
-					{lightness: ""},
-				]
-				},
-			]
-		';
+		$map_style = '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]';
 
+		// Filter to change Google maps style
 		if( has_filter('bbgmap_map_style') ) {
 			$map_style = apply_filters( 'bbgmap_map_style', $map_style );
 		}

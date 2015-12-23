@@ -35,6 +35,9 @@ Map options
 
 == Changelog ==
 
+= 1.3 =
+* Now, get lat and lng by address!
+
 = 1.2 =
 * Add multi markers
 * Add some filters
