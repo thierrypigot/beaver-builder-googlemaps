@@ -12,6 +12,7 @@ $controls = array(
 	'rotateControl'             => 'false',
 	'scaleControl'              => 'false',
 	'scrollwheel'               => 'false',
+	'streetViewControl'         => 'false',
 	'width'                     => '100%',
 );
 
@@ -45,12 +46,22 @@ if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(
 
 		<?php
 		$map_style = '[{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]';
-
 		// Filter to change Google maps style
 		if( has_filter('bbgmap_map_style') ) {
 			$map_style = apply_filters( 'bbgmap_map_style', $map_style );
 		}
+
+
+
+		$bbgmap_map_defaut_icon = TP_BB_GMAP_URL .'tpbbgmap/assets/images/marker.png';
+		// Filter to change Google maps defaut icon
+		if( has_filter('bbgmap_map_defaut_icon') ) {
+			$bbgmap_map_defaut_icon = apply_filters( 'bbgmap_map_defaut_icon', $bbgmap_map_defaut_icon );
+		}
 		?>
+
+
+
 		var styles = <?php echo $map_style; ?>;
 
 		var styledMap = new google.maps.StyledMapType( styles, {name: "Routier"} );
@@ -74,7 +85,7 @@ if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(
 				rotateControl:			<?php echo esc_js( $atts['rotateControl'] ); ?>,
 				scaleControl:			<?php echo esc_js( $atts['scaleControl'] ); ?>,
 				scrollwheel:			<?php echo esc_js( $atts['scrollwheel'] ); ?>,
-				streetViewControl:		false,
+				streetViewControl:		<?php echo esc_js( $atts['streetViewControl'] ); ?>,
 				mapTypeControlOptions:	{
 					mapTypeIds: [google.maps.MapTypeId.SATELLITE, 'map_style']
 				}
@@ -90,7 +101,7 @@ if( !isset( $atts['markers'] ) || ( empty(  $atts['markers'][0]->lat ) || empty(
 					if( marker.marker ) {
 						var icon = marker.marker_src;
 					} else {
-						var icon = '<?php echo TP_BB_GMAP_URL; ?>tpbbgmap/assets/images/marker.png';
+						var icon = '<?php echo esc_js( $bbgmap_map_defaut_icon ); ?>';
 					}
 
 

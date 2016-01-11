@@ -3,7 +3,7 @@ Contributors: thierrypigot
 Donate link: https://www.thierry-pigot.fr/reglement/
 Tags: builder, page builder, visual composer, google maps, googlemaps, widget, module, marker
 Requires at least: 3.6
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,6 +34,9 @@ Map options
 3. Result on front page
 
 == Changelog ==
+
+= 1.4 =
+* add partial refresh
 
 = 1.3 =
 * Now, get lat and lng by address!

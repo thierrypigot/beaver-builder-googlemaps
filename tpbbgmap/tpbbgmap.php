@@ -10,11 +10,12 @@ class TPgMapModule extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'          => __('Google Map', 'bbgmap'),
-			'description'   => __('Display a Google map.', 'bbgmap'),
-			'category'      => __('Advanced Modules', 'bbgmap'),
-            'dir'           => TP_BB_GMAP_DIR .'tpbbgmap/',
-            'url'           => TP_BB_GMAP_URL .'tpbbgmap/',
+			'name'          	=> __('Google Map', 'bbgmap'),
+			'description'   	=> __('Display a Google map.', 'bbgmap'),
+			'category'      	=> __('Advanced Modules', 'bbgmap'),
+			'partial_refresh'	=> true
+            'dir	'           => TP_BB_GMAP_DIR .'tpbbgmap/',
+            'url'   	        => TP_BB_GMAP_URL .'tpbbgmap/',
 		));
 
 		$this->add_js( 'google-maps',       	'//maps.google.com/maps/api/js?sensor=true&#038;language=fr', array('jquery'), null );
@@ -106,24 +107,6 @@ FLBuilder::register_module('TPgMapModule', array(
 			)
 		)
 	)
-	/*
-	'style'       => array(
-		'title'         => __('Style', 'bbgmap'),
-		'sections'      => array(
-			'general'       => array(
-				'title'         => '',
-				'fields'        => array(
-					'map_style'        => array(
-						'type'          => 'code',
-						'editor'		=> 'javascript',
-						'description'   => __('Free style for Google maps:', 'bbgmap') .'<a href="https://snazzymaps.com/" target="_blank">https://snazzymaps.com/</a>',
-						'rows'          => '15'
-					),
-				)
-			)
-		)
-	)
-	*/
 ));
 
 /*
