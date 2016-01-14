@@ -13,7 +13,7 @@ class TPgMapModule extends FLBuilderModule {
 			'name'          	=> __('Google Map', 'bbgmap'),
 			'description'   	=> __('Display a Google map.', 'bbgmap'),
 			'category'      	=> __('Advanced Modules', 'bbgmap'),
-			'partial_refresh'	=> true
+			'partial_refresh'	=> true,
             'dir	'           => TP_BB_GMAP_DIR .'tpbbgmap/',
             'url'   	        => TP_BB_GMAP_URL .'tpbbgmap/',
 		));

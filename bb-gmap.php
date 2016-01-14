@@ -3,7 +3,7 @@
  * Plugin Name: Beaver Builder - Google Maps
  * Plugin URI: http://www.thierry-pigot.fr
  * Description: Google Maps module for Beaver Builder.
- * Version: 1.4
+ * Version: 1.4.1
  * Author: Thierry Pigot
  * Author URI: http://www.thierry-pigot.fr
  */

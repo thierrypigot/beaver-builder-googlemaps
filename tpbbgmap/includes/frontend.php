@@ -25,7 +25,7 @@ $atts = array_merge( $data, $controls );
 
 // do_shortcode on all content field
 foreach ( $atts['markers'] as $id => $marker) {
-	$atts['markers'][$id]->content = do_shortcode( $atts['markers'][0]->content );
+	$atts['markers'][$id]->content = do_shortcode( $atts['markers'][$id]->content );
 }
 
 
