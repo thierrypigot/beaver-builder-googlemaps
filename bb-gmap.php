@@ -3,28 +3,22 @@
  * Plugin Name: Beaver Builder - Google Maps
  * Plugin URI: http://www.thierry-pigot.fr
  * Description: Google Maps module for Beaver Builder.
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: Thierry Pigot
  * Author URI: http://www.thierry-pigot.fr
  */
- 
- /*
- * todo[
- * Ajouter des hooks :
- * - modifier le wrapper html de la popup du marqueur
- * ]
-*/
+
 
 define('TP_BB_GMAP_DIR', plugin_dir_path(__FILE__));
 define('TP_BB_GMAP_URL', plugins_url('/', __FILE__));
 
 // Custom modules
+add_action('init', 'tp_bb_load_module_gmap');
 function tp_bb_load_module_gmap() {
 	if( class_exists('FLBuilder') ) {
 		require_once 'tpbbgmap/tpbbgmap.php';
 	}
 }
-add_action('init', 'tp_bb_load_module_gmap');
 
 /**
  * Load plugin textdomain.
@@ -38,6 +32,7 @@ function tp_bb_load_textdomain_gmap()
 }
 
 // Custom fields
+add_action('fl_builder_control_gmap', 'tp_bb_custom_field_gmap', 1, 3);
 function tp_bb_custom_field_gmap($name, $value, $field) {
 	?>
 	<script>
@@ -180,4 +175,3 @@ function tp_bb_custom_field_gmap($name, $value, $field) {
 
 	<?php
 }
-add_action('fl_builder_control_gmap', 'tp_bb_custom_field_gmap', 1, 3);

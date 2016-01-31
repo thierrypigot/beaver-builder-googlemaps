@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @class FLMapModule
+ * @class TPgMapModule
  */
 class TPgMapModule extends FLBuilderModule {
 
@@ -13,12 +14,12 @@ class TPgMapModule extends FLBuilderModule {
 			'name'          	=> __('Google Map', 'bbgmap'),
 			'description'   	=> __('Display a Google map.', 'bbgmap'),
 			'category'      	=> __('Advanced Modules', 'bbgmap'),
-			'partial_refresh'	=> true,
-            'dir	'           => TP_BB_GMAP_DIR .'tpbbgmap/',
-            'url'   	        => TP_BB_GMAP_URL .'tpbbgmap/',
-		));
+            'dir'               => TP_BB_GMAP_DIR .'tpbbgmap/',
+            'url'               => TP_BB_GMAP_URL .'tpbbgmap/',
+            'partial_refresh'	=> true
+        ));
 
-		$this->add_js( 'google-maps',       	'//maps.google.com/maps/api/js?sensor=true&#038;language=fr', array('jquery'), null );
+		$this->add_js( 'google-maps',       	'//maps.google.com/maps/api/js?sensor=false&#038;language=fr', array('jquery'), null );
 		$this->add_js( 'jquery-ui-map',     	$this->url .'assets/js/jquery.ui.map.min.js', array('jquery'), null, null );
 		$this->add_js( 'markerclusterer',		$this->url .'assets/js/markerclusterer.min.js', array('jquery','jquery-ui-map'), null, null );
 		$this->add_js( 'bb-gmaps-script',     	$this->url .'assets/js/script.js', array('markerclusterer'), null, null );
@@ -50,7 +51,6 @@ FLBuilder::register_module('TPgMapModule', array(
 						'default'       => '13',
 						'options'       => array(
 							'1'      => __( '1 (space)', 'bbgmap' ),
-							'2'      => '2',
 							'2'      => '2',
 							'3'      => '3',
 							'4'      => '4',
