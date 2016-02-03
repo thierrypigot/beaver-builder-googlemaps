@@ -3,7 +3,7 @@ Contributors: thierrypigot
 Donate link: https://www.thierry-pigot.fr/reglement/
 Tags: builder, page builder, visual composer, google maps, googlemaps, widget, module, marker
 Requires at least: 3.6
-Tested up to: 4.4
+Tested up to: 4.4.2
 Stable tag: trunk
 License: GPL2+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,7 +35,7 @@ Map options
 
 == Changelog ==
 
-= 1.4.2 =
+= 1.4.3 =
 * Add style map
 
 = 1.4.1 =
