@@ -20,8 +20,8 @@
 		},
 		init: function()
 		{
-		}
 
+		}
 	});
 
 })(jQuery);

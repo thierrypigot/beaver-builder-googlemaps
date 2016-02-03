@@ -164,7 +164,8 @@ function tp_bb_custom_field_gmap($name, $value, $field) {
 			});
 		});
 	</script>
-	<input type="text" class="text text-full" id="address" placeholder="<?php _e('55 Rue du Faubourg Saint-Honoré, 75008 Paris, France', 'bbgmap'); ?>">
+
+	<input type="text" data-geo="location" class="text text-full" id="address" placeholder="<?php _e('55 Rue du Faubourg Saint-Honoré, 75008 Paris, France', 'bbgmap'); ?>">
 	<div class="label label-primary get_coordinates"><a href="#" id="get_coordinates"><i class="fa fa-crosshairs"></i> <?php _e('Get coordinates','bbgmap'); ?></a></div>
 	<div id="tp-location">
 		<div class="location_map-container">

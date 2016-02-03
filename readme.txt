@@ -35,6 +35,9 @@ Map options
 
 == Changelog ==
 
+= 1.4.2 =
+* Add style map
+
 = 1.4.1 =
 * Fix bug on marker content
 

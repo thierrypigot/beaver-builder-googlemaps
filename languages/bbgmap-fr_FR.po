@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Beaver Builde Google Maps Module\n"
-"POT-Creation-Date: 2015-12-23 02:06+0100\n"
-"PO-Revision-Date: 2015-12-23 02:06+0100\n"
+"POT-Creation-Date: 2016-02-03 10:35+0100\n"
+"PO-Revision-Date: 2016-02-03 10:36+0100\n"
 "Last-Translator: Thierry Pigot <contact@thierry-pigot.fr>\n"
 "Language-Team: Thierry Pigot <contact@thierry-pigot.fr>\n"
 "Language: fr_FR\n"
@@ -16,101 +16,122 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: bb-gmap.php:88
+#: bb-gmap.php:79
 msgid "This address could not be found: "
 msgstr "Cette adresse est introuvable :"
 
-#: bb-gmap.php:110
+#: bb-gmap.php:101
 msgid "This place could not be found: "
 msgstr "Cette adresse est introuvable :"
 
-#: bb-gmap.php:170
+#: bb-gmap.php:161
 msgid "Please, i need a address to work ;)"
 msgstr "S'il vous plaît, j'ai besoin d'une adresse pour fonctionner ;)"
 
-#: bb-gmap.php:176
+#: bb-gmap.php:168
 msgid "55 Rue du Faubourg Saint-Honoré, 75008 Paris, France"
 msgstr "55 Rue du Faubourg Saint-Honoré, 75008 Paris, France"
 
-#: bb-gmap.php:177
+#: bb-gmap.php:169
 msgid "Get coordinates"
 msgstr "Obtenir les coordonnées"
 
-#: bb-gmap.php:181
+#: bb-gmap.php:173
 msgid "Move the marker to reposition"
 msgstr "Déplacer le curseur pour repositionner"
 
-#: tpbbgmap/includes/frontend.php:33
+#: tpbbgmap/includes/frontend.php:38
 msgid "Add a marker to see the map"
 msgstr "Ajoutez un marqueur pour voir la carte"
 
-#: tpbbgmap/tpbbgmap.php:13
+#: tpbbgmap/tpbbgmap.php:14
 msgid "Google Map"
 msgstr "Carte Google"
 
-#: tpbbgmap/tpbbgmap.php:14
+#: tpbbgmap/tpbbgmap.php:15
 msgid "Display a Google map."
 msgstr "Afficher la carte Google."
 
-#: tpbbgmap/tpbbgmap.php:15
-msgid "Advanced Modules"
-msgstr "Extensions avancées"
+#: tpbbgmap/tpbbgmap.php:16
+msgid "WP in a day Modules"
+msgstr "Modules WP in a day"
 
-#: tpbbgmap/tpbbgmap.php:41 tpbbgmap/tpbbgmap.php:136
+#: tpbbgmap/tpbbgmap.php:51 tpbbgmap/tpbbgmap.php:145
 msgid "General"
 msgstr "Général"
 
-#: tpbbgmap/tpbbgmap.php:48
+#: tpbbgmap/tpbbgmap.php:58
 msgid "Zoom"
 msgstr "Zoom"
 
-#: tpbbgmap/tpbbgmap.php:51
+#: tpbbgmap/tpbbgmap.php:61
 msgid "1 (space)"
 msgstr "1 (espace)"
 
-#: tpbbgmap/tpbbgmap.php:72
+#: tpbbgmap/tpbbgmap.php:81
 msgid "21 (street)"
 msgstr "21 (rue)"
 
-#: tpbbgmap/tpbbgmap.php:80
+#: tpbbgmap/tpbbgmap.php:89
 msgid "Height"
 msgstr "Hauteur"
 
-#: tpbbgmap/tpbbgmap.php:93
+#: tpbbgmap/tpbbgmap.php:102
 msgid "Markers"
 msgstr "Marqueurs"
 
-#: tpbbgmap/tpbbgmap.php:100 tpbbgmap/tpbbgmap.php:169
+#: tpbbgmap/tpbbgmap.php:109 tpbbgmap/tpbbgmap.php:178
 msgid "Marker"
 msgstr "Marqueur"
 
-#: tpbbgmap/tpbbgmap.php:133
+#: tpbbgmap/tpbbgmap.php:119
+msgid "Style"
+msgstr "Style"
+
+#: tpbbgmap/tpbbgmap.php:120
+msgid ""
+"Paste a style from <a href=\"http://snazzymaps.com\" target=\"_blank"
+"\">Snazzymaps</a> or <a href=\"http://www.mapstylr.com/\" target=\"_blank"
+"\">MapStylr</a>."
+msgstr ""
+"Coller le style depuis les sites <a href=\"http://snazzymaps.com\" "
+"target=\"_blank\">Snazzymaps</a> ou <a href=\"http://www.mapstylr.com/\" "
+"target=\"_blank\">MapStylr</a>."
+
+#: tpbbgmap/tpbbgmap.php:123
+msgid "Style Code"
+msgstr "Code du style de la carte"
+
+#: tpbbgmap/tpbbgmap.php:142
 msgid "Add Marker"
 msgstr "Ajouter un marqueur"
 
-#: tpbbgmap/tpbbgmap.php:143
+#: tpbbgmap/tpbbgmap.php:152
 msgid "Title"
 msgstr "Titre"
 
-#: tpbbgmap/tpbbgmap.php:144
+#: tpbbgmap/tpbbgmap.php:153
 msgid "Used to identify the markers in list"
 msgstr "Utilisé pour identifier les marqueurs dans la liste"
 
-#: tpbbgmap/tpbbgmap.php:151
+#: tpbbgmap/tpbbgmap.php:160
 msgid "Latitude"
 msgstr "Latitude"
 
-#: tpbbgmap/tpbbgmap.php:152
+#: tpbbgmap/tpbbgmap.php:161
 msgid "48.8582807"
 msgstr "48.8582807"
 
-#: tpbbgmap/tpbbgmap.php:160
+#: tpbbgmap/tpbbgmap.php:169
 msgid "Longitude"
 msgstr "Longitude"
 
-#: tpbbgmap/tpbbgmap.php:161
+#: tpbbgmap/tpbbgmap.php:170
 msgid "2.386331"
 msgstr "2.386331"
+
+#~ msgid "Advanced Modules"
+#~ msgstr "Extensions avancées"
 
 #~ msgid "This address could not be found :"
 #~ msgstr "Cette adresse est introuvable :"

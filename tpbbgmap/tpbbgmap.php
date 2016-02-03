@@ -13,18 +13,19 @@ class TPgMapModule extends FLBuilderModule {
 		parent::__construct(array(
 			'name'          	=> __('Google Map', 'bbgmap'),
 			'description'   	=> __('Display a Google map.', 'bbgmap'),
-			'category'      	=> __('Advanced Modules', 'bbgmap'),
+			'category'          => __('WP in a day Modules', 'bbgmap'),
             'dir'               => TP_BB_GMAP_DIR .'tpbbgmap/',
             'url'               => TP_BB_GMAP_URL .'tpbbgmap/',
             'partial_refresh'	=> true
         ));
 
-		$this->add_js( 'google-maps',       	'//maps.google.com/maps/api/js?sensor=false&#038;language=fr', array('jquery'), null );
+		$this->add_js( 'google-maps',       	'//maps.google.com/maps/api/js?sensor=false&#038;language=fr&amp;libraries=places', array('jquery'), null );
 		$this->add_js( 'jquery-ui-map',     	$this->url .'assets/js/jquery.ui.map.min.js', array('jquery'), null, null );
 		$this->add_js( 'markerclusterer',		$this->url .'assets/js/markerclusterer.min.js', array('jquery','jquery-ui-map'), null, null );
 		$this->add_js( 'bb-gmaps-script',     	$this->url .'assets/js/script.js', array('markerclusterer'), null, null );
-	}
 
+		add_filter('fl_builder_render_settings_field', array($this, 'extended_map_filters'), 10, 3);
+	}
 
 	public function update( $settings ) {
 
@@ -32,6 +33,13 @@ class TPgMapModule extends FLBuilderModule {
 			$settings->content = do_shortcode( $settings->content );
 
 		return $settings;
+	}
+
+	public function extended_map_filters( $field, $name, $settings ) {
+		if( isset($field) && 'map_style' == $name && $settings->map_style ) {
+			$settings->map_style = trim(stripslashes(json_encode($settings->map_style)), '"');
+		}
+		return $field;
 	}
 }
 
@@ -103,6 +111,24 @@ FLBuilder::register_module('TPgMapModule', array(
 						'preview_text'  => 'title', // Name of a field to use for the preview text
 						'multiple'      => true
 					),
+				)
+			)
+		)
+	),
+	'map_style'			=> array(
+		'title'			=> __('Style', 'bbgmap'),
+		'description'	=> __('Paste a style from <a href="http://snazzymaps.com" target="_blank">Snazzymaps</a> or <a href="http://www.mapstylr.com/" target="_blank">MapStylr</a>.', 'bbgmap'),
+		'sections'	=> array(
+			'map_style'			=> array(
+				'title'			=> __('Style Code', 'bbgmap'),
+				'fields'		=> array(
+					'map_style'			=> array(
+						'type'				=> 'textarea',
+						'rows'				=> '15',
+						'preview'      => array(
+							'type'         => 'refresh'
+						)
+					)
 				)
 			)
 		)
