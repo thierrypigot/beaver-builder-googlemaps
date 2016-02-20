@@ -31,6 +31,11 @@ function tp_bb_load_textdomain_gmap()
 	load_plugin_textdomain( 'bbgmap', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
+add_filter( 'fl_builder_upgrade_url', 'tp_bb_gmap_upgrade_link' );
+function tp_bb_gmap_upgrade_link() { 
+    return 'https://www.wpbeaverbuilder.com/?fla=315'; 
+}
+
 // Custom fields
 add_action('fl_builder_control_gmap', 'tp_bb_custom_field_gmap', 1, 3);
 function tp_bb_custom_field_gmap($name, $value, $field) {
